@@ -162,9 +162,17 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
+const filtrelenmisTatli=[];
+
+
+function ismeGoreFiltrele(orijinalTatlar,j="Çikolata"){
+  for (let k=0;k<orijinalTatlar.length;k++){
+    if(orijinalTatlar[k].includes("Çikolata")){
+      filtrelenmisTatli.push(orijinalTatlar[k])
+    }
+  }console.log(filtrelenmisTatli)
 }
+ismeGoreFiltrele(orijinalTatlar,j="Çikolata")
 
 
 
@@ -180,9 +188,16 @@ Aşağıdakileri yapmak için ortalamaKelimeSayisi işlevini kullanın:
    Örneğin: ortalamaKelimeSayisi(orijinalTatlar) 0 ile 2 arasında bir sayı döndürmelidir.
 */
 
-function ortalamaKelimeSayisi(/*kod buraya*/){
-  /*kod buraya*/
+function ortalamaKelimeSayisi(arr){
+
+  for (let i = 0; i < arr.length; i++) {
+    let toplKelime=0;
+    const sozcukSayma = arr[i].split(" ").length;
+    toplKelime+=sozcukSayma;
+  }
+  return toplKelime/arr.length;
 }
+
 
 
 /* ALIŞTIRMA 2:
@@ -198,32 +213,40 @@ Aşağıdakileri yapmak için rastgeleTatlar işlevini ve yeni dizileri kullanı
 */
 
 
-function rastgeleTatlar(/*kod buraya*/){
-  /*kod buraya*/
+function rastgeleTatlar(arr1,arr2,arr3,arr4){
+  const butunCesit=[...arr1,...arr2,...arr3,...arr4];
+  const randomTat=[];
+  for(let k=0;k<25;k++){
+    const rastgeleTatIndex=Math.floor(Math.random()*butunCesit.length);
+    const randomTat=butunCesit[rastgeleTatIndex];
+    randomTat.push(randomTat);
+    butunCesit.splice(rastgeleTatIndex,1)
+  }
+  return rastgeleTatlar;
 }
 
-// NEW DATA ARRAYS FOR STRETCH 2 ⬇️
-// const yeniTatlar = [
-//   "Badem",
-//   "Ballı Badem",
-//   "Fıstık Ezmesi",
-//   "Profiterol",
-//   "Madlen Çikolata"
-// ]
+ //NEW DATA ARRAYS FOR STRETCH 2 ⬇️
+ const yeniTatlar = [
+   "Badem",
+   "Ballı Badem",
+   "Fıstık Ezmesi",
+   "Profiterol",
+   "Madlen Çikolata"
+ ]
 
-// const mevsimlikTatlar = [
-// "Pekan",
-// "Kaju",
-// "Çikolatalı Mousse",
-// "Fransız Vanilyası",
-// "Yumurta",
-// "Alman çikolatası",
-// "Kek üzerine krema",
-// "Hindistan Cevizi",
-// "Kaymaklı Biskuvi",
-// "Beyaz Çikolata",
-// "Mango"
-// ]
+ const mevsimlikTatlar = [
+ "Pekan",
+ "Kaju",
+ "Çikolatalı Mousse",
+ "Fransız Vanilyası",
+ "Yumurta",
+ "Alman çikolatası",
+ "Kek üzerine krema",
+ "Hindistan Cevizi",
+ "Kaymaklı Biskuvi",
+ "Beyaz Çikolata",
+ "Mango"
+ ]
 
 // const bolgeselTatlar = [
 // "Kaymak",
